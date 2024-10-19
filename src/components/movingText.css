@@ -1,0 +1,55 @@
+.text-container {
+  width: 100px; /* רוחב האזור שבו הטקסט יזוז */
+  overflow: hidden;
+  position: relative;
+  direction: rtl;
+}
+
+.moving-text-wrapper {
+  display: inline-block;
+  white-space: nowrap;
+  animation: move-text 10s linear infinite;
+}
+
+.moving-text {
+  padding-right: 5px;
+  display: inline-block;
+}
+
+@keyframes move-text {
+  0% {
+    transform: translateX(0);
+  }
+  10% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(50%);
+  }
+}
+
+.text-blur {
+  position: absolute;
+  top: 0;
+  width: 8px;
+  height: 100%;
+  pointer-events: none;
+}
+
+.text-blur-left {
+  left: 0;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0)
+  );
+}
+
+.text-blur-right {
+  right: 0;
+  background: linear-gradient(
+    to left,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0)
+  );
+}
